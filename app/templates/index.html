@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Wrapper -->
+<div id="wrapper" class="divided">
+
+    <!-- One -->
+        <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+            <div class="content">
+                <h1>Трансляции из социальных сетей</h1>
+                <p class="major"><!--[-->Привет, мы создали для тебя бесплатные трансляции из  <a href="https://www.instagram.com/">Instagram</a> и  <a href="https://twitter.com">Twitter</a>.<!--]--></p>
+                <ul class="actions vertical">
+                    <li><a href="#first" class="button big wide smooth-scroll-middle">Попробовать сейчас</a></li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="/static/images/main.jpeg" alt="" />
+            </div>
+        </section>
+
+    <!-- Two -->
+        <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+            <div class="content">
+                <h2>Как это работает?</h2>
+                <p>Укажите интересующий Вас хештег и смотрите за тем как обновляется Ваша лента совершенно бесплатно</p>
+                <ul class="actions vertical">
+                    <form method="post" onsubmit="return checkForm(this)"  action="/h">
+								<div class="field half first">
+									<label for="hash_tag"></label>
+									<input type="text" name="hash_tag" id="hash_tag" value="" />
+								</div>
+                    <li><input type="submit" class="button special icon fa-search" value="Следить"></li>
+                    </form>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="/static/images/instatwitter.png" alt="" />
+            </div>
+        </section>
+
+
+
+{% endblock %}

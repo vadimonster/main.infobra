@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="wrapper style1 align-center">
+        <div class="inner">
+
+            <section>
+                <header>
+                    <h3>Line-Up</h3>
+                </header>
+                <div class="content">
+                    {% for res in result %}
+							{% include 'msg.html' %}
+						{% endfor %}
+                </div>
+            </section>
+        </div>
+</section>
+
+
+{% endblock %}

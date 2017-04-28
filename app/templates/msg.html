@@ -1,0 +1,13 @@
+{% if res['societe'] == 0 %}
+<div class="box">
+<h4><span class="icon style2 major fa-instagram"></span></h4>
+<p><span class="image left"><img src="{{ res['photo'] }}" alt=""></span>{{ res['text'] }}</p>
+</br></br></br></br>
+</div>
+{% else %}
+<div class="box">
+<h4><span class="icon style2 major fa-twitter"></span></h4>
+<p><span class="image left"><img src="{{ res['photo'] }}" alt=""></span>{{ res['text'] }}</p>
+</br></br></br></br>
+</div>
+{% endif %}
