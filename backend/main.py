@@ -2,6 +2,7 @@ from optparse import OptionParser
 import twitterr
 import instagramm
 from controler import diez, data
+import time
 
 parser = OptionParser()
 
@@ -25,6 +26,7 @@ def Worker(hashTag):
         line = d.split('||')
         if data.check(id_hash, line[0], line[1]) is None:
             data.append(id_hash, '1', line[0], line[1])
+
 
 
 Worker(options.diez)
