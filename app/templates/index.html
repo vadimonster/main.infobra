@@ -23,7 +23,7 @@
                 <h2>Как это работает?</h2>
                 <p>Укажите интересующий Вас хештег и смотрите за тем как обновляется Ваша лента совершенно бесплатно</p>
                 <ul class="actions vertical">
-                    <form method="post" onsubmit="return checkForm(this)"  action="/h">
+                    <form id="sForm" method="post" onsubmit="return checkForm(this)" action="/h">
 								<div class="field half first">
 									<label for="hash_tag"></label>
 									<input type="text" name="hash_tag" id="hash_tag" value="" />
@@ -38,5 +38,28 @@
         </section>
 
 
+
+{% endblock %}
+{% block js %}
+    <script>
+
+    function startLoop(hastag){        
+        $.post('/h/'+hastag,function(data){
+            setTimeout(function(){startLoop(hastag)},60000)
+        })
+    }
+    $(function(){
+        $('#sForm').submit(function(){
+            e.preventDefault();
+            var h = $.trim($('#hash_tag').val());
+            if(h.length>0){
+                startLoop(h);
+            }else{
+                $('#hash_tag').focus();          
+            }
+
+            return false;
+        })
+    })
 
 {% endblock %}
